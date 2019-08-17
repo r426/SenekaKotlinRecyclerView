@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">Seneka</string>
+    <string name="like">patinka</string>
+    <string name="bookmarks">mano</string>
+    <string name="share">dalintis</string>
+    <string name="left">atgal</string>
+    <string name="right">pirmyn</string>
+    <string name="first_page">pirmas puslapis</string>
+    <string name="show_bookmarks">mano sąrašas</string>
+    <string name="last_page">paskutinis puslapis</string>
+    <string name="delete">X</string>
+</resources>
