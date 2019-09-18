@@ -24,10 +24,10 @@ class RecyclerViewActivity : AppCompatActivity() {
         // 2) Find the ListView object (the location where to drop the whole list)
         val recyclerView = findViewById<View>(R.id.recycler_view) as RecyclerView
 
-        //   LayoutManager
+        // 3) Give the RecyclerView a default layout manager.
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        // 3) Make the ListView use the ArrayAdapter
+        // 4) Make the ListView use the ArrayAdapter
         recyclerView.adapter = adapter
     }
 
