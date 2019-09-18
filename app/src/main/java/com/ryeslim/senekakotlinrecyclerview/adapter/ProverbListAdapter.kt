@@ -11,6 +11,9 @@ import com.ryeslim.senekakotlinrecyclerview.model.WorkWithProverbs
 import kotlinx.android.synthetic.main.one_item.view.*
 import java.util.ArrayList
 
+//Developed following the Simple RecyclerView Android Example in Kotlin by SANTOSH DAHAL
+//https://www.suntos.com.np/kotlin-android-sample-projects-with-source-code-in-android-studio/simple-recyclerview-android-example-in-kotlin-source-code.html
+
 //Adapters are used to connect data with View items in a list.
 //The adapter receives 1) the context of the activity and 2) the array of objects.
 //It will bind our data to the populated ViewHolders in the RecyclerView

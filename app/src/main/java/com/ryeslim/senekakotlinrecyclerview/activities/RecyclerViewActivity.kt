@@ -15,19 +15,19 @@ class RecyclerViewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_list_of_proverbs)
 
-        // 1) Create an ArrayAdapter, whose data source is a list of Proverb objects.
+        // 1) Create an adapter, whose data source is a list of Proverb objects.
         val adapter = ProverbListAdapter(
             this,
             WorkWithProverbs.getInstance().readBookmarks()
         )
 
-        // 2) Find the ListView object (the location where to drop the whole list)
+        // 2) Find the RecyclerView object (the location where to drop the whole list)
         val recyclerView = findViewById<View>(R.id.recycler_view) as RecyclerView
 
         // 3) Give the RecyclerView a default layout manager.
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        // 4) Make the ListView use the ArrayAdapter
+        // 4) Make the RecyclerView use the ArrayAdapter
         recyclerView.adapter = adapter
     }
 
