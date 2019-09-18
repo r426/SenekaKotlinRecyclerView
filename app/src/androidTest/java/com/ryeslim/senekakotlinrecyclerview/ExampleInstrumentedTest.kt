@@ -1,4 +1,4 @@
-package com.ryeslim.senekakotlin
+package com.ryeslim.senekakotlinrecyclerview
 
 import androidx.test.InstrumentationRegistry
 import androidx.test.runner.AndroidJUnit4

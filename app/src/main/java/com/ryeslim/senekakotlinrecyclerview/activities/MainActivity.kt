@@ -1,10 +1,15 @@
-package com.ryeslim.senekakotlin
+package com.ryeslim.senekakotlinrecyclerview.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import com.android.volley.toolbox.Volley
+import com.ryeslim.senekakotlinrecyclerview.*
+import com.ryeslim.senekakotlinrecyclerview.dataclass.Proverb
+import com.ryeslim.senekakotlinrecyclerview.model.AllProverbs
+import com.ryeslim.senekakotlinrecyclerview.model.SwipeDetector
+import com.ryeslim.senekakotlinrecyclerview.model.WorkWithProverbs
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -100,7 +105,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showBookmarks() {
-        val intent = Intent(this, ListOfProverbsActivity::class.java)
+        val intent = Intent(this, RecyclerViewActivity::class.java)
         startActivity(intent)
     }
 

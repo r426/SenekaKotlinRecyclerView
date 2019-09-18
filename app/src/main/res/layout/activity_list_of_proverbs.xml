@@ -6,10 +6,10 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent"
               android:orientation="vertical"
-              tools:context="com.ryeslim.senekakotlin.ListOfProverbsActivity">
+              tools:context="com.ryeslim.senekakotlinrecyclerview.activities.RecyclerViewActivity">
 
-    <ListView
-            android:id="@+id/listView"
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="16"/>

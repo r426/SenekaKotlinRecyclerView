@@ -1,7 +1,8 @@
-package com.ryeslim.senekakotlin
+package com.ryeslim.senekakotlinrecyclerview.model
 
 import android.content.Context
 import android.content.Intent
+import com.ryeslim.senekakotlinrecyclerview.dataclass.Proverb
 import java.io.*
 import java.util.*
 
@@ -9,7 +10,8 @@ class WorkWithProverbs//constructor
 private constructor() {
 
     private var index = -1
-    private val theCurrentList: ArrayList<Proverb> = ArrayList()//the list of proverbs seen during this session
+    private val theCurrentList: ArrayList<Proverb> =
+        ArrayList()//the list of proverbs seen during this session
     private var context: Context? = null
     private var bookmarkIndex: Int = 0
 
@@ -103,7 +105,12 @@ private constructor() {
             while (sc.hasNext()) {
                 val mID = sc.nextShort()
                 val mProverb = sc.nextLine().trim { it <= ' ' }
-                listOfBookmarks!!.add(Proverb(mID, mProverb))
+                listOfBookmarks!!.add(
+                    Proverb(
+                        mID,
+                        mProverb
+                    )
+                )
             }
         } catch (e: FileNotFoundException) {
             e.printStackTrace()
@@ -135,16 +142,20 @@ private constructor() {
         // that is why the the listOfProverbs should be reversed before writing to the file
         // and then reversed back to be ready to be shown on the screen
         Collections.reverse(listOfBookmarks)
+        println(listOfBookmarks.toString())
+        val listOfBookmarksCopy = listOfBookmarks?.toList()
+        println(listOfBookmarksCopy.toString())
         for (index in listOfBookmarks!!.indices) {
             val prefix = "\n"
             if (writer != null) {
                 try {
-                    writer.write("${theCurrentList[index].theID} ")
-                    writer.write("${theCurrentList[index].proverb}$prefix")
+                    writer.write("${listOfBookmarksCopy?.get(index)?.theID} ")
+                    println("${listOfBookmarksCopy?.get(index)?.theID} ")
+                    writer.write("${listOfBookmarksCopy?.get(index)?.proverb}$prefix")
+                    println("${listOfBookmarksCopy?.get(index)?.proverb}$prefix")
                 } catch (e: IOException) {
                     e.printStackTrace()
                 }
-
             }
         }
         Collections.reverse(listOfBookmarks)
@@ -153,7 +164,6 @@ private constructor() {
         } catch (e: IOException) {
             e.printStackTrace()
         }
-
     }
 
     fun isBookmarked(thisID: Short): Boolean {
@@ -171,7 +181,8 @@ private constructor() {
         //singleton
         fun getInstance(): WorkWithProverbs {
             if (instance == null) {
-                instance = WorkWithProverbs()
+                instance =
+                    WorkWithProverbs()
             }
             return instance!!
         }

@@ -1,9 +1,11 @@
-package com.ryeslim.senekakotlin
+package com.ryeslim.senekakotlinrecyclerview.model
 
 import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonArrayRequest
+import com.ryeslim.senekakotlinrecyclerview.activities.MainActivity
+import com.ryeslim.senekakotlinrecyclerview.dataclass.Proverb
 import org.json.JSONArray
 import org.json.JSONException
 import java.util.ArrayList
@@ -27,7 +29,12 @@ class AllProverbs private constructor() {
     init {
 
         theListOfAll.ensureCapacity(1000)
-        theListOfAll.add(Proverb(0.toShort(), "Melas – plonasienis daiktas: gerai įsižiūrėjus, jis persišviečia."))
+        theListOfAll.add(
+            Proverb(
+                0.toShort(),
+                "Melas – plonasienis daiktas: gerai įsižiūrėjus, jis persišviečia."
+            )
+        )
     }
 
     /**
@@ -46,7 +53,12 @@ class AllProverbs private constructor() {
                             val jsonObject = response.getJSONObject(i)
                             println(jsonObject.getInt("id"))
                             println(jsonObject.getString("text"))
-                            theListOfAll.add(Proverb(jsonObject.getInt("id").toShort(), jsonObject.getString("text")))
+                            theListOfAll.add(
+                                Proverb(
+                                    jsonObject.getInt("id").toShort(),
+                                    jsonObject.getString("text")
+                                )
+                            )
                         } catch (e: JSONException) {
                             e.printStackTrace()
                         }
@@ -68,7 +80,8 @@ class AllProverbs private constructor() {
 
         fun getInstance(): AllProverbs {
             if (instance == null) {
-                instance = AllProverbs()
+                instance =
+                    AllProverbs()
             }
             return instance!!
         }

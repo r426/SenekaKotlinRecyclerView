@@ -1,7 +1,8 @@
-package com.ryeslim.senekakotlin
+package com.ryeslim.senekakotlinrecyclerview.model
 
 import android.view.MotionEvent
 import android.view.View
+import com.ryeslim.senekakotlinrecyclerview.activities.MainActivity
 import kotlin.math.abs
 
 class SwipeDetector(private val activity: MainActivity) : View.OnTouchListener {

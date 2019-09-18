@@ -1,4 +1,4 @@
-package com.ryeslim.senekakotlin
+package com.ryeslim.senekakotlinrecyclerview
 
 import org.junit.Test
 
